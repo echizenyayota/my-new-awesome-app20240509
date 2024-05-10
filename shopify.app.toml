@@ -3,7 +3,7 @@
 client_id = "828f8e3449a7d86e03a67d31756aedd3"
 name = "my-new-awesome-app20240509"
 handle = "my-new-awesome-app20240509"
-application_url = "https://german-distance-pillow-depend.trycloudflare.com"
+application_url = "https://pricing-black-mainly-drum.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://german-distance-pillow-depend.trycloudflare.com/auth/callback",
-  "https://german-distance-pillow-depend.trycloudflare.com/auth/shopify/callback",
-  "https://german-distance-pillow-depend.trycloudflare.com/api/auth/callback"
+  "https://pricing-black-mainly-drum.trycloudflare.com/auth/callback",
+  "https://pricing-black-mainly-drum.trycloudflare.com/auth/shopify/callback",
+  "https://pricing-black-mainly-drum.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
