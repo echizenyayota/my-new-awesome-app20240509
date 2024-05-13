@@ -74,3 +74,16 @@ export async function action({ request, params }) {
   return redirect(`/app/qrcodes/${qrCode.id}`); 
 }
 
+export default function QRCodeForm() {
+  const errors = useActionData()?.errors || {};
+
+  const qrCode = useLoaderData();
+  const [formState, setFormState] = useState(qrCode);
+  const [cleanFormState, setCleanFormState] = useState(qrCode);
+  const isDirty = JSON.stringify(formState) !== JSON.stringify(cleanFormState);
+
+  const nav = useNavigation();
+  const isSaving = nav.state === "submitting" && nav.formData?.get("action") !== "delete";
+  const isDeleting = nav.state === "submitting" && nav.formData?.get("action") === "delete";
+}
+
