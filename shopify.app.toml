@@ -3,7 +3,7 @@
 client_id = "828f8e3449a7d86e03a67d31756aedd3"
 name = "my-new-awesome-app20240509"
 handle = "my-new-awesome-app20240509"
-application_url = "https://ml-southern-integer-polish.trycloudflare.com"
+application_url = "https://acids-leone-pins-quest.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://ml-southern-integer-polish.trycloudflare.com/auth/callback",
-  "https://ml-southern-integer-polish.trycloudflare.com/auth/shopify/callback",
-  "https://ml-southern-integer-polish.trycloudflare.com/api/auth/callback"
+  "https://acids-leone-pins-quest.trycloudflare.com/auth/callback",
+  "https://acids-leone-pins-quest.trycloudflare.com/auth/shopify/callback",
+  "https://acids-leone-pins-quest.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

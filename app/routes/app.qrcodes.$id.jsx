@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { join, redirect} from "@remix-run/node";
+import { json, redirect} from "@remix-run/node";
 import {
   useActionData,
   useLoaderData,
@@ -43,3 +43,34 @@ export async function loader({ request, params}) {
   return json(await getQRCode(Number(params.id), admin.graphql));
 
 }
+
+export async function action({ request, params }) {
+  const { session } = await authenticate.admin(request);
+  const { shop } = session;
+
+  /** @type {any} */
+  const data = {
+    ...Object.fromEntries(await request.formData()),
+    shop,
+  };
+
+  if (data.action === "delete") {
+    await db.qRCode.delete({ where: {id: Number(params.id) }
+  }); 
+    return redirect("/app");
+  }
+
+  const errors = validateQRCode(data);
+
+  if(errors) {
+    return json({ errors }, { status: 422 });
+  }
+
+  const qrCode = 
+    params.id === "new" 
+      ? await db.qRCode.create({ data })
+      : await db.qRCode.update({ where: { id: Number(params.id) }, data });
+  
+  return redirect(`/app/qrcodes/${qrCode.id}`); 
+}
+
