@@ -88,6 +88,27 @@ export default function QRCodeForm() {
 
   const navigate = useNavigation();
 
+  async function selectProduct() {
+    const products = await window.shopify.resourcePicker({
+      type: "products",
+      action: "select", // customized action verb, either 'select' or 'add',
+    });
+
+    if (products) {
+      const { images, id, variants, title, handle } = products[0];
+      
+      setFormState({
+        ...formState,
+        productId: id,
+        productVariantId: variants[0].id,
+        productTitle: title,
+        productHandle: handle,
+        productAlt: images[0]?.altText, 
+        productImage: images[0]?.originalSrc,
+      });
+    }
+  }
+
   
 }
 
