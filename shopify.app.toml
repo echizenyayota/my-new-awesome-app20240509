@@ -3,7 +3,7 @@
 client_id = "828f8e3449a7d86e03a67d31756aedd3"
 name = "my-new-awesome-app20240509"
 handle = "my-new-awesome-app20240509"
-application_url = "https://trivia-labeled-rack-sitemap.trycloudflare.com"
+application_url = "https://treasure-builder-times-stones.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://trivia-labeled-rack-sitemap.trycloudflare.com/auth/callback",
-  "https://trivia-labeled-rack-sitemap.trycloudflare.com/auth/shopify/callback",
-  "https://trivia-labeled-rack-sitemap.trycloudflare.com/api/auth/callback"
+  "https://treasure-builder-times-stones.trycloudflare.com/auth/callback",
+  "https://treasure-builder-times-stones.trycloudflare.com/auth/shopify/callback",
+  "https://treasure-builder-times-stones.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

@@ -109,6 +109,22 @@ export default function QRCodeForm() {
     }
   }
 
+  const submit = useSubmit();
+  function handleSave() {
+    const data = {
+      title: formState.title,
+      productId: formState.productId || "",
+      productVariantId: formState.productVariantId || "",
+      productHandle: formState.productHandle || "",
+      destination: formState.destination, 
+    };
+
+    setCleanFormState({...formState});
+    submit(data, { method: "post" });
+
+  }
+
+
   
 }
 
