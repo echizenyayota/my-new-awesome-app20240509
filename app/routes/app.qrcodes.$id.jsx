@@ -124,27 +124,29 @@ export default function QRCodeForm() {
 
   }
 
+  return (
+    <Page>
+      <ui-title-bar title={qrCode.id ? "Edit QR code" : "Create new QR Code"}>
+        <button variant="breadcrumb" onClick={() => navigate("/app")}>
+          QR codes
+        </button>
+      </ui-title-bar>
+      <Layout>
+        <Layout.section>
+          <BlockStack gap="500">
+            <Card>
+              <BlockStack gap="500">
+              
+              </BlockStack>
+            </Card>
+          </BlockStack>
+        </Layout.section>
+      </Layout>
+    </Page>
+  
+  );
+
 }
 
-return (
-  <Page>
-    <ui-title-bar title={qrCode.id ? "Edit QR code" : "Create new QR Code"}>
-      <button variant="breadcrumb" onClick={() => navigate("/app")}>
-        QR codes
-      </button>
-    </ui-title-bar>
-    <Layout>
-      <Layout.section>
-        <BlockStack gap="500">
-          <Card>
-            <BlockStack gap="500">
 
-            </BlockStack>
-          </Card>
-        </BlockStack>
-      </Layout.section>
-    </Layout>
-  </Page>
-
-);
 
