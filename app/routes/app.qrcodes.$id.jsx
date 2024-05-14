@@ -136,7 +136,21 @@ export default function QRCodeForm() {
           <BlockStack gap="500">
             <Card>
               <BlockStack gap="500">
-              
+                <Text as={"h2"} variant="headingLg">
+                  Title
+                </Text>
+                <TextField
+                  id="title"
+                  helpText="Only store staff can see this title"
+                  label="title"
+                  labelHidden
+                  autoComplete="off"
+                  value={formState.title}
+                  onChange={(title) => setFormState({
+                    ...formState, title
+                  })}
+                  error={error.title}
+                />
               </BlockStack>
             </Card>
           </BlockStack>
