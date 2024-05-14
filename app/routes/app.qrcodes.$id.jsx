@@ -124,7 +124,22 @@ export default function QRCodeForm() {
 
   }
 
-
-  
 }
+
+return (
+  <Page>
+    <Layout>
+      <Layout.section>
+        <BlockStack gap="500">
+          <Card>
+            <BlockStack gap="500">
+              
+            </BlockStack>
+          </Card>
+        </BlockStack>
+      </Layout.section>
+    </Layout>
+  </Page>
+
+);
 
