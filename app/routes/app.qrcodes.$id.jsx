@@ -154,6 +154,43 @@ export default function QRCodeForm() {
               </BlockStack>
             </Card>
           </BlockStack>
+          <Card>
+            <BlockStack gap="500">
+              <InlineStack align="space-between">
+                  <Text as={"h2"} variant="heading">
+                    Product
+                  </Text>
+                  {formState.productID ? (
+                    <Button varinat="plain" onClick={selectProduct}>
+                      Change product
+                    </Button>
+                  ) : null}
+              </InlineStack>
+              {formState.productId ? (
+                <InlineStack blockAlign="center" gap="500">
+                  <Thumbnail
+                    source={formState.productImage || ImageIcon}
+                    alt={formState.productAlt}
+                  />
+                  <Text as="span" variant="headingMd" fontWeight="semibold">
+                    {formState.productTitle}
+                  </Text>
+                </InlineStack>
+              ) : (
+                <BlockStack gap="200">
+                  <Button onClick={selectProduct} id="select-product">
+                    Select product
+                  </Button>
+                  {errors.productId ? (
+                    <InlineError 
+                      message={errors.productId}
+                      fieldID="myFieldID"
+                    />
+                  ) : null}
+                </BlockStack>
+              )}
+            </BlockStack>
+          </Card>
         </Layout.Section>
       </Layout>
     </Page>

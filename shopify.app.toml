@@ -3,7 +3,7 @@
 client_id = "828f8e3449a7d86e03a67d31756aedd3"
 name = "my-new-awesome-app20240509"
 handle = "my-new-awesome-app20240509"
-application_url = "https://ga-karaoke-educated-verbal.trycloudflare.com"
+application_url = "https://wicked-garbage-junior-friend.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://ga-karaoke-educated-verbal.trycloudflare.com/auth/callback",
-  "https://ga-karaoke-educated-verbal.trycloudflare.com/auth/shopify/callback",
-  "https://ga-karaoke-educated-verbal.trycloudflare.com/api/auth/callback"
+  "https://wicked-garbage-junior-friend.trycloudflare.com/auth/callback",
+  "https://wicked-garbage-junior-friend.trycloudflare.com/auth/shopify/callback",
+  "https://wicked-garbage-junior-friend.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
