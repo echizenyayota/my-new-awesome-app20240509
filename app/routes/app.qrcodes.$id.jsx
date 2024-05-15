@@ -132,7 +132,7 @@ export default function QRCodeForm() {
         </button>
       </ui-title-bar>
       <Layout>
-        <Layout.section>
+        <Layout.Section>
           <BlockStack gap="500">
             <Card>
               <BlockStack gap="500">
@@ -149,12 +149,12 @@ export default function QRCodeForm() {
                   onChange={(title) => setFormState({
                     ...formState, title
                   })}
-                  error={error.title}
+                  error={errors.title}
                 />
               </BlockStack>
             </Card>
           </BlockStack>
-        </Layout.section>
+        </Layout.Section>
       </Layout>
     </Page>
   
