@@ -252,6 +252,29 @@ export default function QRCodeForm() {
             </BlockStack>
           </Card>
         </Layout.Section>
+        <Layout.Section>
+          <PageActions
+            secondaryActions={[
+              {
+                content: "Delete",
+                loading: isDeleting,
+                disabled: !qrCode.id || !qrCode || isSaving || isDeleting,
+                destructive: true,
+                outline: true,
+                onAction: () => submit(
+                  { action: "delete"},
+                  { method: "post"}
+                ),
+              }
+            ]}
+            primaryAction={{
+              content: "Save",
+              loading: isSaving,
+              disabled: !isDirty || isSaving || isDeleting,
+              onAction: handleSave,
+            }}
+          />
+        </Layout.Section>
       </Layout>
     </Page>
   
