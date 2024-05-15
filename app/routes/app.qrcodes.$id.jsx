@@ -224,7 +224,7 @@ export default function QRCodeForm() {
         <Layout.Section variant="oneThird">
           <Card>
             <Text as={"h2"} variant="headingLg">
-              QR Code 
+              QR code 
             </Text>
             {qrCode ? (
               <EmptyState image={qrCode.image} imageContained={true} />
@@ -244,7 +244,7 @@ export default function QRCodeForm() {
               </Button>
               <Button
                 disabled={!qrCode.id}
-                url={`/qrcode/${qrCode.id}`}
+                url={`/qrcodes/${qrCode.id}`}
                 target="_blank"
               >
                 Go to public URL
@@ -261,11 +261,8 @@ export default function QRCodeForm() {
                 disabled: !qrCode.id || !qrCode || isSaving || isDeleting,
                 destructive: true,
                 outline: true,
-                onAction: () => submit(
-                  { action: "delete"},
-                  { method: "post"}
-                ),
-              }
+                onAction: () => submit({ action: "delete"}, { method: "post"}),
+              },
             ]}
             primaryAction={{
               content: "Save",
