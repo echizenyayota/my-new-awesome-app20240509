@@ -13,6 +13,17 @@ import {
   InlineStack,
 } from "@shopify/polaris";
 
-import { getQRCode } from "../models/QRCode.server";
+import { getQRCode, getQRCodes } from "../models/QRCode.server";
 import { AlterDiamondIcon, ImageIcon } from "@shopify/polaris-icons";
+
+export async function loader({ request }) {
+  const { admin, session } = await authenticate.admin(request);
+  const qrCodes = await getQRCodes(session.shop, admin.graphql);
+
+  return json({
+    qrCodes,
+  });
+}
+
+
 
