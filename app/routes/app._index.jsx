@@ -36,6 +36,12 @@ export async function loader({ request }) {
       <p>Allow customers to scan codes and buy products using their phones</p>
     </EmptyState>
   );
+
+  function truncate(str, { length = 25 } = {}) {
+    if (!str) return "";
+    if (str.length <= length) return str;
+    return str.slice(0, length) + "...";
+  }
 }
 
 
