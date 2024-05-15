@@ -221,6 +221,37 @@ export default function QRCodeForm() {
           </Card>
           </BlockStack>
         </Layout.Section>
+        <Layout.Section variant="oneThird">
+          <Card>
+            <Text as={"h2"} variant="headingLg">
+              QR Code 
+            </Text>
+            {qrCode ? (
+              <EmptyState image={qrCode.image} imageContained={true} />
+            ) : (
+              <EmptyState image="">
+                Your QR code will appear here after you save
+              </EmptyState>
+            )}
+            <BlockStack gap="300">
+              <Button
+                disabled={!qrCode?.image}
+                url={qrCode?.image}
+                download
+                variant="primary"
+              >
+                Download
+              </Button>
+              <Button
+                disabled={!qrCode.id}
+                url={`/qrcode/${qrCode.id}`}
+                target="_blank"
+              >
+                Go to public URL
+              </Button>
+            </BlockStack>
+          </Card>
+        </Layout.Section>
       </Layout>
     </Page>
   
