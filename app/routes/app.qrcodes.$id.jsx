@@ -86,11 +86,11 @@ export default function QRCodeForm() {
   const isSaving = nav.state === "submitting" && nav.formData?.get("action") !== "delete";
   const isDeleting = nav.state === "submitting" && nav.formData?.get("action") === "delete";
 
-  const navigate = useNavigation();
+  const navigate = useNavigate();
 
   async function selectProduct() {
     const products = await window.shopify.resourcePicker({
-      type: "products",
+      type: "product",
       action: "select", // customized action verb, either 'select' or 'add',
     });
 
@@ -126,7 +126,7 @@ export default function QRCodeForm() {
 
   return (
     <Page>
-      <ui-title-bar title={qrCode.id ? "Edit QR code" : "Create new QR Code"}>
+      <ui-title-bar title={qrCode.id ? "Edit QR code" : "Create new QR code"}>
         <button variant="breadcrumb" onClick={() => navigate("/app")}>
           QR codes
         </button>
@@ -153,15 +153,14 @@ export default function QRCodeForm() {
                 />
               </BlockStack>
             </Card>
-          </BlockStack>
           <Card>
             <BlockStack gap="500">
               <InlineStack align="space-between">
-                  <Text as={"h2"} variant="heading">
+                  <Text as={"h2"} variant="headingLg">
                     Product
                   </Text>
-                  {formState.productID ? (
-                    <Button varinat="plain" onClick={selectProduct}>
+                  {formState.productId ? (
+                    <Button variant="plain" onClick={selectProduct}>
                       Change product
                     </Button>
                   ) : null}
@@ -189,8 +188,38 @@ export default function QRCodeForm() {
                   ) : null}
                 </BlockStack>
               )}
+              <Bleed marginInlineStart="200" marginInlineEnd="200">
+                <Divider />
+              </Bleed>
+              <InlineStack gap="500" align="space-between" blockAlign="start">
+                <ChoiceList 
+                  title="Scan destination"
+                  choices={[
+                    {label: "Link to product page", value: "product"},
+                    {label: "Link to checkout page with product in the cart", value: "cart", },
+                  ]}
+                  selected={[formState.destination]}
+                  onChange={(destination) => 
+                    setFormState({
+                      ...formState,
+                      destination: destination[0],
+                    })
+                  }
+                  error={errors.destination}
+                />
+                {qrCode.destinationUrl ? (
+                  <Button
+                    variant="plain"
+                    url={qrCode.destinationUrl}
+                    target="_blank"
+                  >
+                    Go to destination URL
+                  </Button>
+                ) : null}
+              </InlineStack>
             </BlockStack>
           </Card>
+          </BlockStack>
         </Layout.Section>
       </Layout>
     </Page>
