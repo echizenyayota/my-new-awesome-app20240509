@@ -42,6 +42,28 @@ export async function loader({ request }) {
     if (str.length <= length) return str;
     return str.slice(0, length) + "...";
   }
+
+  const QRTable = ({ qrCodes }) => {
+    <IndexTable
+      resourceName={{
+        singular: "QR code",
+        plural: "QR codes"
+      }}
+      itemCount={qrCodes.length}
+      headings={[
+        { title: "Thumbnail", hidden: true },
+        { title: "Title" },
+        { title: "Product" },
+        { title: "Date created" },
+        { title: "Scans" },
+      ]}
+      selectable={false}
+    >
+      {qrCodes.map((qrCode) => {
+        <QRTableRow key={qrCode.id} qrCode={qrCode} />
+      })}
+    </IndexTable>
+  } 
 }
 
 
