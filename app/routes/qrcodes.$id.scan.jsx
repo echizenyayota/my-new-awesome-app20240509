@@ -12,6 +12,13 @@ export const loader = async ({ params }) => {
 
   invariant(qrCode, "Could not find QR code destination");
 
+  await db.qRCode.update({
+   where: { id },
+   data: { scans: { increment: 1 } },  
+  });
+
+  
+
 
 }
 
