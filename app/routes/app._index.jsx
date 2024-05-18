@@ -101,5 +101,34 @@ const QRTableRow = ({ qrCode }) => {
   </IndexTable.Row>
 }
 
+export default function Index() {
+  const { qrCodes } = useLoaderData();
+  const navigate = useNavigate();
+
+  return(
+    <Page>
+      <ui-title-bar title="QR Code">
+        <button 
+          variant="primary" 
+          onClick={() => navigate("/app/qrcodes/new")}
+        >
+          Create QR Code
+        </button>
+      </ui-title-bar>
+      <Layout>
+        <Layout.Section>
+          <Card padding="0">
+            {qrCodes.length === 0 ? (
+              <EmptyQRCodeState onAction={() => navigate("qrcodes/new")} />
+            ) : ( 
+              <QRTable qrCodes={qrCodes} />
+            )}
+          </Card>
+        </Layout.Section>
+      </Layout>
+    </Page>
+  );
+}
+
 
 
