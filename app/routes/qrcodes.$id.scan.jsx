@@ -17,8 +17,6 @@ export const loader = async ({ params }) => {
    data: { scans: { increment: 1 } },  
   });
 
-  
-
-
+  return redirect(getDestinationUrl(qrCode));
 }
 
