@@ -3,7 +3,7 @@
 client_id = "828f8e3449a7d86e03a67d31756aedd3"
 name = "my-new-awesome-app20240509"
 handle = "my-new-awesome-app20240509"
-application_url = "https://proprietary-albany-courier-bag.trycloudflare.com"
+application_url = "https://tba-clark-advocacy-highlights.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://proprietary-albany-courier-bag.trycloudflare.com/auth/callback",
-  "https://proprietary-albany-courier-bag.trycloudflare.com/auth/shopify/callback",
-  "https://proprietary-albany-courier-bag.trycloudflare.com/api/auth/callback"
+  "https://tba-clark-advocacy-highlights.trycloudflare.com/auth/callback",
+  "https://tba-clark-advocacy-highlights.trycloudflare.com/auth/shopify/callback",
+  "https://tba-clark-advocacy-highlights.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
