@@ -18,5 +18,5 @@ export const loader = async ({ params }) => {
   });
 
   return redirect(getDestinationUrl(qrCode));
-}
+};
 
