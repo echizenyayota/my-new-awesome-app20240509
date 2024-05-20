@@ -17,7 +17,7 @@ export const loader = async ({ params }) => {
     title: qrCode.title,
     image: await getQRCodeImage(id),
   });
-}
+};
 
 export default function QRCode() {
   const { image, title } = useLoaderData();
